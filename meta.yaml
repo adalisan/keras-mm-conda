@@ -1,0 +1,59 @@
+
+package:
+  name: keras
+  version: 2.2.4.1.mm
+
+source:
+  - url: https://github.com/MarcBS/keras/archive/2.2.4.1.tar.gz # [unix and py3x]
+  - path: activate.sh
+  - path: deactivate.sh
+  - path: load_config.py
+
+
+build:
+  number: 0
+  string: py36_0
+
+requirements:
+  host:
+    - python  >=3.6,<3.7.0a0 # [py3x]
+    - libgcc-ng 7.2.0
+    - libstdcxx-ng 7.2.0
+    - pip 18.0 py36_1001
+  run:
+    - keras-applications >=1.0.6
+    - keras-preprocessing >=1.0.5
+    - numpy >=1.9.1
+    - python >=3.6,<3.7.0a0
+    - python # [py3x]
+    - h5py
+    - numpy
+    - scipy >=0.14
+    - tensorflow     # [not (win and py27)]
+#    - tensorflow-gpu
+    - pyyaml
+    - six >=1.9.0
+
+test:
+  imports:
+    - keras
+    - keras.backend
+    - keras.datasets
+    - keras.engine
+    - keras.layers
+    - keras.preprocessing
+    - keras.utils
+    - keras.wrappers
+
+about:
+  home: https://github.com/keras-team/keras
+  license: MIT
+  license_file: LICENSE
+  summary: Deep Learning for Python
+
+extra:
+  recipe-maintainers:
+    - ericdill
+    - mariusvniekerk
+    - croth1
+    - ocefpaf

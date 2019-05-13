@@ -1,0 +1,51 @@
+
+package:
+  name: keras
+  version: {{ version }}
+
+source:
+  url: https://github.com/MarcBS/keras/archive/{{ version }}.tar.gz
+  
+
+build:
+  number: 0
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+    - h5py
+    - numpy
+    - scipy >=0.14
+    - tensorflow     # [not (win and py27)]
+    - pyyaml
+    - six >=1.9.0
+    - theano
+    - keras-applications =1.0.4
+    - keras-preprocessing =1.0.2
+
+test:
+  imports:
+    - keras
+    - keras.backend
+    - keras.datasets
+    - keras.engine
+    - keras.layers
+    - keras.preprocessing
+    - keras.utils
+    - keras.wrappers
+
+about:
+  home: https://github.com/MarcBS/keras
+  license: MIT
+  license_file: LICENSE
+  summary: Deep Learning for Python
+
+extra:
+  recipe-maintainers:
+    - ericdill
+    - mariusvniekerk
+    - croth1
+    - ocefpaf
