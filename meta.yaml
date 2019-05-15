@@ -1,6 +1,6 @@
 
 package:
-  name: keras
+  name: keras-gpu
   version: 2.2.4.2.mm
 
 source:
@@ -28,8 +28,8 @@ requirements:
     - h5py
     - numpy
     - scipy >=0.14
-    - tensorflow     # [not (win and py27)]
-#    - tensorflow-gpu
+#    - tensorflow     # [not (win and py27)]
+    - tensorflow-gpu
     - pyyaml
     - six >=1.9.0
 
