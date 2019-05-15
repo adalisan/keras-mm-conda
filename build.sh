@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#$PYTHON setup.py install --single-version-externally-managed --record record.txt
 $PYTHON -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
 export RECIPE_DIR=$(pwd -P)
@@ -9,7 +9,7 @@ for CHANGE in "activate" "deactivate"
 do
     mkdir -p "${PREFIX}/etc/conda/${CHANGE}.d"
     cp "${RECIPE_DIR}/${CHANGE}.sh" "${PREFIX}/etc/conda/${CHANGE}.d/keras_${CHANGE}.sh"
-    
+
 done
 
 mkdir -p "${PREFIX}/etc/keras"

@@ -1,10 +1,10 @@
 
 package:
   name: keras
-  version: 2.2.4.1.mm
+  version: 2.2.4.2.mm
 
 source:
-  - url: https://github.com/MarcBS/keras/archive/2.2.4.1.tar.gz # [unix and py3x]
+  - url: https://github.com/MarcBS/keras/archive/2.2.4.2.tar.gz
   - path: activate.sh
   - path: deactivate.sh
   - path: load_config.py
